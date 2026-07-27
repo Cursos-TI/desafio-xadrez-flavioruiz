@@ -7,13 +7,25 @@
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+
+    // contador genérico para os bucles while e do-while
     int contador = 1;
+    // numero de casas para movimentação das peças
     int casas_bispo, casas_torre, casas_rainha;
     
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-    casas_bispo = 5;
-    printf("Movimentando o bispo %d casas: \n", casas_bispo);
+    // Solicitar ao usuario o número de casas para movimentar o Bispo. Valor deve ser maior que 0.
+    printf("Ingrese o número de casas para movimentação do Bispo: ");
+    while ( casas_bispo < 1 ) {
+        scanf("%d", &casas_bispo);
+        if (casas_bispo < 1) {
+            printf("Número invalido, tente novamente.\n");
+            printf("Ingrese o número de casas para movimentação do Bispo: ");
+        }
+    }
+    // Movimentar o Bispo - Estrutura while
+    printf("Movimentando o bispo %d casa%s: \n", casas_bispo, (casas_bispo > 1 ? "s" : ""));
     while (contador <= casas_bispo ) {
         printf("  Cima direita\n");
         contador++;
@@ -21,8 +33,16 @@ int main() {
 
     // Implementação de Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-    casas_torre = 5;
-    printf("Movimentando a torre %d casas: \n", casas_torre);
+    // Solicitar ao usuario o número de casas para movimentar a Torre. Valor deve ser maior que 0.
+    do {
+        printf("Ingrese o número de casas para movimentação da Torre: ");
+        scanf("%d", &casas_torre);
+        if (casas_torre < 1) {
+            printf("Número invalido, tente novamente.\n");
+        }
+    } while ( casas_torre < 1 );
+    // Movimentar a Torre - Estrutura for
+    printf("Movimentando a torre %d casa%s: \n", casas_torre, (casas_torre > 1 ? "s" : ""));
     for (int i = 0; i < casas_torre; i++) {
         printf("  Direita\n");
     }
@@ -30,8 +50,16 @@ int main() {
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
     contador = 1;
-    casas_rainha = 8;
-    printf("Movimentando a rainha %d casas: \n", casas_rainha);
+    // Solicitar ao usuario o número de casas para movimentar a Rainha. Valor deve ser maior que 0.
+    do {
+        printf("Ingrese o número de casas para movimentação da Rainha: ");
+        scanf("%d", &casas_rainha);
+        if (casas_rainha < 1) {
+            printf("Número invalido, tente novamente.\n");
+        }
+    } while ( casas_rainha < 1 );
+    // Movimentar a Rainha - Estrutura do-while
+    printf("Movimentando a rainha %d casa%s: \n", casas_rainha, (casas_rainha > 1 ? "s" : ""));
     do {
         printf("  Esquerda\n");
         contador++;
